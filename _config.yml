@@ -23,9 +23,9 @@ repository               : "xyc12-7/xyc1207.github.io"
 author:
   # Biographic information
   avatar           : "myphoto.jpg"
-  name             : "Your Sidebar Name"
+  name             : "Yingce Xia"
   pronouns         : "he/him"  
-  bio              : "PhD, AI"
+  bio              : # "PhD, AI"
   location         : "Beijing, China"
   employer         : "Zhongguancun Academy"
   uri              : # URL
