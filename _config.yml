@@ -22,12 +22,12 @@ repository               : "xyc12-7/xyc1207.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "myphoto.png"
+  avatar           : "myphoto.jpg"
   name             : "Your Sidebar Name"
   pronouns         : "he/him"  
-  bio              : "AI and AI4Science Researcher"
-  location         : "Beijing"
-  employer         : # "Red Brick University"
+  bio              : "PhD, AI"
+  location         : "Beijing, China"
+  employer         : "Zhongguancun Academy"
   uri              : # URL
   email            : "yingce.xia@outlook.com" 
 
