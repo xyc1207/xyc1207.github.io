@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Yingce Xia / Site Title"
+title                    : "Yingce Xia"
 title_separator          : "-"
 name                     : &name "Yingce Xia"
 description              : &description "personal description"
@@ -22,9 +22,9 @@ repository               : "xyc12-7/xyc1207.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "myphoto.png"
   name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
+  pronouns         : "he/him"  
   bio              : "AI and AI4Science Researcher"
   location         : "Beijing"
   employer         : # "Red Brick University"
