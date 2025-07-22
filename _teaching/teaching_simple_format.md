@@ -6,5 +6,5 @@
   - Covered topics: Meta learning & automatic machine learning, generative adversarial network, dual learning, natural language processing
 - Advanced machine learning, **Tsinghua University**, 2019 and 2021
   - Covered topics: Meta learning & automatic machine learning, generative adversarial network, dual learning, natural language processing
-- Dual learning, **IJCAI**, 2019
-  - Tutorial at IJCAI 2019 about dual learning. [https://duallearning-tutorial.github.io/](tutorial link)
+- Dual learning, **IJCAI**, Macau, China, 2019
+  - Tutorial at IJCAI 2019 about dual learning. [https://duallearning-tutorial.github.io](tutorial link)
