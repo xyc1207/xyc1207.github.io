@@ -28,9 +28,10 @@ I am always open to new collaboration opportunities! Feel free to reach out to m
 
 ## Professional Activities
   - Action editor: TMLR
-  - AC: ICML 2024-2025, NeurIPS 2023 to 2025
-  - SPC member: AAAI 2020~2022, IJCAI 2021, AAMAS 2022
-  - PC members: NeurIPS 2018 to 2022, ICML 2019 to 2023, ICLR 2019 to 2022, CVPR 2019 to 2021, ICCV 2019/2021, ECCV 2020, EMNLP 2020/2021
+  - AC: ICML 2024 to 2025; NeurIPS 2023 to 2025
+  - SPC member: AAAI 2020~2022, 2026; IJCAI 2021; AAMAS 2022
+  - Reviewer: Nature Method; Nature Machine Intelligence
+  - PC members: NeurIPS 2018 to 2022; ICML 2019 to 2023; ICLR 2019 to 2022; CVPR 2019 to 2021; ICCV 2019/2021; ECCV 2020; EMNLP 2020/2021
 
 
 ## Teaching
