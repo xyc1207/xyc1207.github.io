@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Yingce Xia, a researcher at the Zhongguancun Academy. Prior to this, I served as a Principal Research Manager at Microsoft Research, specializing in generative AI and AI for science. My research focuses on building foundation models for molecular science, with a particular emphasis on small molecule and protein design.  I collaborate closely with leading biomedical organizations, such as GHDDI, and top pharmaceutical companies to translate AI innovations into real-world applications. I have authored over 70 publications in top journals and conferences, with more than 7,800 Google Scholar citations.
+I am Yingce Xia, a researcher at the Zhongguancun Academy. Prior to this, I served as a Principal Research Manager at Microsoft Research, specializing in generative AI and AI for science. My research focuses on building foundation models for molecular science, with a particular emphasis on small molecule and protein design.  I collaborate closely with leading biomedical organizations, such as GHDDI, and top pharmaceutical companies to translate AI innovations into real-world applications. I have authored over 70 publications in top journals and conferences, with more than 7,900 Google Scholar citations.
 
 I am always open to new collaboration opportunities! Feel free to reach out to me via email at yingce.xia@gmail.com or yingce.xia@outlook.com
 
