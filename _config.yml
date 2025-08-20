@@ -259,7 +259,7 @@ defaults:
   #    author_profile: true
   #    share: true
   #    comments: true
-  _publications
+  # _publications
   - scope:
       path: ""
       type: publications
@@ -283,8 +283,8 @@ defaults:
   #    type: talks
   #  values:
   #    layout: talk
-     author_profile: true
-      share: true
+  #   author_profile: true
+  #    share: true
 
 
 # Sass/SCSS
