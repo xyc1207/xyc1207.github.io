@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>科学任务深度推理研究</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #182033;
+      --muted: #5e6a7d;
+      --accent: #365cff;
+      --accent-soft: #eef2ff;
+      --line: #e6e9f2;
+      --shadow: 0 12px 30px rgba(20, 30, 60, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top left, #e9eeff 0, transparent 36%), var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 16px;
+    }
+
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 22px 16px 42px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #17224a 0%, #365cff 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      right: -70px;
+      top: -70px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: .02em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 8vw, 46px);
+      line-height: 1.16;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 17px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 8px 24px rgba(20, 30, 60, 0.045);
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .section p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .highlight {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .rational {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 14px 14px;
+      border-radius: 14px;
+      color: #29365c !important;
+      margin: 14px 0 0 !important;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 15px;
+      background: linear-gradient(180deg, #fff 0%, #fbfcff 100%);
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .item h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .item p {
+      font-size: 15.5px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0;
+      background: #fff;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    details[open] summary::after { content: "−"; }
+
+    .faq-body {
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .faq-body p { margin-top: 12px; }
+
+    .status {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      background: var(--accent-soft);
+      border-radius: 16px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stat span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .contact {
+      background: #111827;
+      color: #fff;
+      border-radius: 22px;
+      padding: 22px 18px;
+      margin-top: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact h2 { margin: 0 0 12px; font-size: 21px; }
+    .contact p { margin: 7px 0; color: rgba(255,255,255,0.82); }
+    .contact a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.45); }
+
+    .footer {
+      text-align: center;
+      color: #8b95a7;
+      font-size: 13px;
+      padding: 20px 0 0;
+    }
+
+    @media (min-width: 760px) {
+      .page { padding-top: 34px; }
+      .hero { padding: 44px 40px; }
+      .section { padding: 28px 30px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .contact { padding: 28px 30px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="tag">科学基础模型 · 分子世界模型</div>
+      <h1>科学任务深度推理研究</h1>
+      <p class="subtitle">探索大模型、多模态建模、智能体与强化学习如何支持更加 rational 的科学发现。</p>
+    </section>
+
+    <section class="section">
+      <h2>方向目标</h2>
+      <p>本方向的长期目标是构建 <span class="highlight">科学基础模型</span> 和 <span class="highlight">分子世界模型</span>，探索更加 rational 的科学发现范式。</p>
+      <p class="rational">这里的 rational 并不是指简单的逻辑推演，而是指让科学发现过程更加有依据、可复现、可迁移、可推广、可泛化：模型不仅学习已有科学结论，也学习科学家如何提出问题、组织证据、形成假设、设计实验、修正失败，并在真实研发过程中持续迭代。</p>
+      <p>我们希望未来的科学基础模型不仅能够处理科学文本，还能够统一理解和生成分子、蛋白质、核酸、材料、实验过程等多类型科学对象，并在真实科学任务中完成推理、设计、优化和验证。</p>
+    </section>
+
+    <section class="section">
+      <h2>当前阶段做什么</h2>
+      <p>当前阶段并不是立即开展一次大规模模型训练。特别是在学生培养和前沿探索项目中，我们更关注下一次大规模训练之前必须理顺的关键问题：科学对象如何表征，科学数据如何组织，文本与科学实体如何融合，模型应具备哪些推理和生成能力，复杂反馈如何用于模型优化，科研过程和人类研发行为能否被建模，以及这些能力如何在真实药物设计、蛋白设计、化学反应和材料发现等任务中得到验证。</p>
+    </section>
+
+    <section class="section">
+      <h2>前探索问题</h2>
+      <div class="grid">
+        <article class="item">
+          <div class="num">1</div>
+          <h3>科学场景中的大模型与智能体技术</h3>
+          <p>面向药物设计、蛋白质工程、材料发现、实验优化等任务，研究大模型如何完成信息收集、问题拆解、推理规划、模型训练、工具调用和结果验证，构建面向科学发现的智能体系统。</p>
+        </article>
+
+        <article class="item">
+          <div class="num">2</div>
+          <h3>文本与科学实体的统一表征与深度融合</h3>
+          <p>研究如何将自然语言与分子、蛋白质、核酸、材料结构、表格数据、实验记录等科学实体映射到统一表示空间中，支持跨模态理解、检索、生成、推理和优化。</p>
+        </article>
+
+        <article class="item">
+          <div class="num">3</div>
+          <h3>科学对象的多模态、长序列与生成建模</h3>
+          <p>发展多模态建模、长上下文理解、科学对象与自然语言对齐，以及扩散模型、自回归模型等生成式建模方法，支持科学对象的理解、生成与优化。</p>
+        </article>
+
+        <article class="item">
+          <div class="num">4</div>
+          <h3>复杂反馈下的强化学习与模型优化</h3>
+          <p>面向奖励稀疏、反馈不确定、目标多样且约束复杂的问题，研究强化学习、偏好优化和反馈建模，使模型能够在实验反馈、模拟反馈、专家反馈和多目标约束下持续改进。</p>
+        </article>
+
+        <article class="item">
+          <div class="num">5</div>
+          <h3>科研规律与科研过程建模</h3>
+          <p>从论文、专利、数据库、实验记录、模拟结果和科研过程数据中挖掘可复用规律，使模型不仅学习科学结论，也学习人类开展科研和研发的过程。</p>
+        </article>
+
+        <article class="item">
+          <div class="num">6</div>
+          <h3>面向真实研发任务的科学设计与优化</h3>
+          <p>面向药物设计、蛋白质设计、化学反应预测与优化、材料设计、实验条件优化等任务，将大模型、多模态建模、生成模型、强化学习和智能体技术用于具体问题求解。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>目前项目组的情况</h2>
+      <p>项目于 2026 年 3 月启动，目前组内包括 3 名学生和 4 名指导老师。项目启动以来进展较快，每位学生均已完成一篇 top conference / journal 投稿。</p>
+    </section>
+
+    <section class="section">
+      <h2>FAQ</h2>
+      <details>
+        <summary>我们与结构模型及已有科学工具的关系是什么？</summary>
+        <div class="faq-body">
+          <p>AlphaFold3、Boltz-2、Protenix 等结构模型已经是非常优秀的科学基础设施。类似地，在分子动力学、力场建模、自由能微扰计算（FEP）等方向，也已经存在大量成熟而强大的工具和方法。许多经典论文、历史实验记录和专利资料中，也可能隐藏着能够影响今天科学发现的重要经验与线索。</p>
+          <p>本项目的目标不是从零开始重新训练一个大型结构预测模型，也不是替代已有的物理模拟和计算化学工具。我们希望积极拥抱、适配和改造这些已有模型与工具，使它们更好地服务于下一代 NatureLM 和具体科学发现任务。</p>
+          <p>简言之，我们与结构模型及已有科学工具的关系不是替代，而是连接、适配和放大：把已有工具的专门能力、历史研究中的隐性经验，以及科学对象本身的结构约束，转化为科学基础模型和科学智能体可以理解、调用、验证和优化的能力。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>我可以有自己的想法吗？</summary>
+        <div class="faq-body">
+          <p>当然可以。我们欢迎任何有价值的新想法，也希望项目成为一个开放的平台，让优秀的思想在这里碰撞、发展和落地。</p>
+          <p>项目中的 action items 不是约束，而是研究入口：它们帮助大家快速理解问题、进入方向和启动探索。在此基础上，我们鼓励同学提出自己的问题、技术路线和应用场景。只要想法有明确的问题定义、合理的技术路径和可验证的目标，我们都会认真讨论并支持推进。</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>进项目要求</summary>
+        <div class="faq-body">
+  <p>欢迎具备 AI、机器学习、生命科学、药物研发、材料学或生物信息学等任一背景的同学加入。</p>
+  <p>我们更看重好奇心、基础能力，以及持续学习和探索真实科学问题的意愿。</p>
+  <p>欢迎任何对 AI for Science 感兴趣的同学来聊聊。</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="contact">
+      <h2>项目导师 / 联系人</h2>
+      <p><strong>夏应策</strong></p>
+      <p>邮箱：<a href="mailto:xiayingce@bza.edu.cn">xiayingce@bza.edu.cn</a></p>
+      <p>个人主页：<a href="https://xyc1207.github.io/" target="_blank" rel="noopener">https://xyc1207.github.io/</a></p>
+    </section>
+
+    <div class="footer">科学任务深度推理研究</div>
+  </main>
+</body>
+</html>
