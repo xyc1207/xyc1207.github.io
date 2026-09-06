@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Last Call｜北京中关村学院 × 中国科学技术大学联培博士招生。导师：夏应策。申请截止：9 月 9 日。通过本次选拔后，可直接推免至中国科学技术大学，进入双方联合培养博士项目。">
+  <title>Last Call｜博士招生｜北京中关村学院 × 中国科学技术大学联培</title>
+  <style>
+    /* 独立 HTML：不引用外部脚本、图片或字体。颜色、尺寸可在此修改。 */
+    :root {
+      color-scheme: light;
+      --page: #eef1f5;
+      --paper: #ffffff;
+      --ink: #1c2b3f;
+      --muted: #637185;
+      --quiet: #8894a5;
+      --line: #dfe6ed;
+      --blue: #225cec;
+      --blue-wash: #f0f5ff;
+      --teal: #168271;
+      --orange: #bc532e;
+      --orange-wash: #fff6ee;
+      --sans: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+      --mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 24px 24px 38px;
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      background-color: var(--page);
+      background-image: radial-gradient(#ced6e0 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid #94b7ff;
+      outline-offset: 4px;
+    }
+    a { color: inherit; }
+    ::selection { background: #dbe8ff; color: #173f9e; }
+    .mono { font-family: var(--mono); }
+    .terminal {
+      width: min(960px, 100%);
+      margin: auto;
+      background: var(--paper);
+      border: 1px solid #cbd6e2;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px #273e5910, 0 2px 8px #273e5906;
+    }
+    .window-bar {
+      height: 46px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      background: #f7f9fc;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .1px;
+    }
+    .window-controls { display: flex; gap: 7px; flex-shrink: 0; }
+    .window-controls i { display: block; width: 9px; height: 9px; border-radius: 50%; }
+    .window-controls i:nth-child(1) { background: #e4a196; }
+    .window-controls i:nth-child(2) { background: #e5c480; }
+    .window-controls i:nth-child(3) { background: #8fc4ab; }
+    .window-path { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .window-path b { font-weight: 600; color: #526684; }
+    .window-theme { margin-left: auto; font-size: 10px; letter-spacing: 1px; white-space: nowrap; color: #70849b; }
+    .paper { padding: 32px 44px 29px; }
+    .shell-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .shell-user { color: var(--teal); font-weight: 600; }
+    .shell-command { color: #45668f; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      column-gap: 30px;
+      align-items: center;
+      margin-top: 27px;
+    }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+    .hero-kicker .bracket { color: #8ba8ec; }
+    .hero-kicker .kicker-note { margin-left: 4px; color: var(--quiet); letter-spacing: .6px; font-size: 10px; }
+    h1 {
+      margin: 7px 0 0;
+      font-size: 74px;
+      line-height: 1.26;
+      letter-spacing: -2.5px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .cursor { color: var(--blue); font-family: var(--mono); font-weight: 500; display: inline-block; margin-left: 3px; }
+    .deadline {
+      align-self: stretch;
+      background: var(--orange-wash);
+      border: 1px solid #f0d7c5;
+      border-radius: 7px;
+      padding: 16px 18px 12px;
+      position: relative;
+    }
+    .deadline::before { content: ""; position: absolute; left: -1px; top: 18px; bottom: 18px; width: 3px; background: #d8754d; }
+    .deadline-label { color: var(--orange); font-size: 11px; line-height: 1.5; font-family: var(--mono); letter-spacing: .9px; }
+    .deadline-number { color: var(--orange); font-family: var(--mono); font-size: 53px; font-weight: 600; line-height: 1.25; letter-spacing: -3px; margin: 3px 0 1px; white-space: nowrap; }
+    .deadline-caption { font-size: 13px; color: #915d43; line-height: 1.6; letter-spacing: .5px; }
+    .institutions {
+      font-size: 25px;
+      line-height: 1.6;
+      letter-spacing: -.4px;
+      font-weight: 700;
+      margin: 20px 0 0;
+    }
+    .institutions .times { color: var(--blue); font-weight: 500; padding: 0 5px; }
+    .hero-rule { height: 1px; background: var(--line); margin-top: 25px; position: relative; }
+    .hero-rule::before { content: ""; position: absolute; left: 0; top: 0; width: 55px; height: 2px; background: var(--blue); }
+    .mentor {
+      display: grid;
+      grid-template-columns: 185px minmax(0, 1fr);
+      gap: 25px;
+      padding: 24px 0 23px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; color: var(--quiet); line-height: 1.6; }
+    .mentor-name { margin: 5px 0 0; font-size: 32px; font-weight: 700; line-height: 1.45; }
+    .mentor-name .mentor-label { font-size: 13px; color: var(--muted); font-weight: 400; margin-left: 14px; vertical-align: middle; }
+    .mentor-roles { padding-left: 24px; border-left: 1px solid var(--line); font-size: 16px; line-height: 1.9; color: #526175; }
+    .mentor-roles p { margin: 0; }
+    .section { padding-top: 23px; }
+    .section + .section { margin-top: 20px; border-top: 1px solid var(--line); }
+    .section-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 13px; }
+    .section-index { font-family: var(--mono); color: var(--teal); font-size: 13px; font-weight: 600; }
+    h2 { margin: 0; font-weight: 700; font-size: 21px; letter-spacing: .2px; }
+    .section-file { font-family: var(--mono); color: var(--quiet); margin-left: auto; font-size: 10px; letter-spacing: .2px; }
+    .research-lead { font-size: 20px; line-height: 1.85; margin: 0; letter-spacing: -.2px; }
+    .research-lead strong { font-weight: 700; }
+    .research-focus { font-size: 17px; color: #59697e; line-height: 2.4; }
+    .keyword { background: var(--blue-wash); color: #2b56ad; padding: 3px 8px; border-radius: 3px; font-weight: 500; white-space: nowrap; }
+    .research-copy { font-size: 16px; line-height: 1.95; color: #58677a; margin: 13px 0 0; }
+    .research-copy strong { color: var(--ink); font-weight: 600; }
+    .workflow {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      margin-top: 17px;
+      padding: 11px 15px;
+      border: 1px solid #e1e9ef;
+      border-radius: 5px;
+      background: #f8fafc;
+      color: #536c8c;
+      font-size: 11px;
+      font-family: var(--mono);
+    }
+    .workflow .prompt { color: var(--teal); font-size: 15px; font-weight: 600; margin-right: 15px; }
+    .workflow .flow-arrow { flex: 1; text-align: center; color: #9bacbf; }
+    .workflow .flow-return { color: var(--teal); margin-left: 17px; font-size: 17px; line-height: 1; }
+    .eligibility { font-size: 17px; line-height: 1.95; margin: 0; color: #58677a; }
+    .eligibility strong { color: #274665; font-weight: 600; box-shadow: inset 0 -6px #edf3fa; }
+    .admission-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin: 13px 0 0;
+      padding: 12px 16px;
+      background: #f0f8f5;
+      border: 1px solid #d5e9e1;
+      border-left: 3px solid var(--teal);
+      border-radius: 4px;
+      break-inside: avoid;
+    }
+    .admission-prompt {
+      font-family: var(--mono);
+      color: var(--teal);
+      font-size: 17px;
+      line-height: 1.85;
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+    .admission-note p {
+      margin: 0;
+      color: #395e54;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+    .admission-note strong { color: #146957; font-weight: 700; }
+    .applicant-copy { margin: 11px 0 0; font-size: 16px; line-height: 1.95; color: #58677a; }
+    .contact-copy { font-size: 16px; line-height: 1.95; margin: 0; color: #58677a; }
+    .contact-copy strong { font-weight: 600; color: var(--ink); }
+    .contact-terminal { margin-top: 17px; padding: 14px 18px; border: 1px solid #d7e2f5; border-radius: 6px; background: #f6f9ff; }
+    .contact-line { display: grid; grid-template-columns: 18px 85px minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 35px; }
+    .contact-prompt { font-family: var(--mono); color: var(--blue); font-size: 17px; }
+    .contact-label { color: #597293; font-size: 13px; }
+    .contact-link { font-family: var(--mono); color: #234d9c; font-size: 17px; text-decoration: none; width: fit-content; overflow-wrap: anywhere; line-height: 1.65; }
+    .contact-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .copy-button { padding: 4px 9px; border: 1px solid #cddcf5; background: white; color: #5272a5; font-size: 11px; border-radius: 4px; cursor: pointer; }
+    .copy-button:hover { color: var(--blue); border-color: #87aafa; }
+    .closing { margin-top: 23px; display: flex; align-items: center; gap: 11px; font-size: 12px; color: #637185; }
+    .closing-symbol { color: var(--teal); font-family: var(--mono); font-size: 16px; }
+    .closing-rule { flex: 1; border-top: 1px dashed #d5dfeb; margin-left: 7px; }
+    .closing-tag { color: #70849f; font-family: var(--mono); font-size: 10px; letter-spacing: .4px; }
+    .status-bar { display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--line); background: #f7f9fc; padding: 10px 22px; font-family: var(--mono); font-size: 10px; color: #8190a4; }
+    .status-branch { color: #5f799d; }
+    .status-right { margin-left: auto; }
+    .toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 12px); padding: 11px 18px; border: 1px solid #b9d8ce; background: #f0fbf6; color: #176b50; border-radius: 8px; box-shadow: 0 5px 24px #23422d14; font-size: 13px; opacity: 0; visibility: hidden; transition: opacity 160ms, transform 160ms, visibility 160ms; z-index: 20; max-width: calc(100% - 30px); text-align: center; }
+    .toast.visible { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+    @media (max-width: 740px) {
+      body { padding: 14px 12px 26px; }
+      .paper { padding: 26px 26px 25px; }
+      .hero { grid-template-columns: minmax(0, 1fr) 177px; gap: 16px; margin-top: 24px; }
+      h1 { font-size: 56px; }
+      .deadline { padding: 12px 14px 11px; }
+      .deadline-number { font-size: 43px; letter-spacing: -2.5px; }
+      .deadline-caption { font-size: 11px; }
+      .institutions { font-size: 21px; }
+      .hero-kicker { font-size: 12px; gap: 7px; }
+      .kicker-note { display: none; }
+      .mentor { grid-template-columns: 153px minmax(0, 1fr); gap: 14px; }
+      .mentor-name { font-size: 28px; }
+      .mentor-roles { font-size: 14px; padding-left: 18px; }
+      .research-lead { font-size: 18px; }
+      .research-focus { font-size: 15px; }
+      .research-copy, .applicant-copy, .contact-copy { font-size: 15px; }
+      .eligibility { font-size: 16px; }
+      .contact-link { font-size: 15px; }
+      .contact-line { grid-template-columns: 14px 67px minmax(0, 1fr) auto; gap: 5px; }
+      .contact-label { font-size: 12px; }
+    }
+    @media (max-width: 520px) {
+      .window-bar { height: 40px; padding: 0 15px; gap: 13px; font-size: 10px; }
+      .window-theme { display: none; }
+      .window-controls { gap: 5px; }
+      .window-controls i { width: 7px; height: 7px; }
+      .paper { padding: 23px 20px 22px; }
+      .shell-line { font-size: 10px; gap: 6px; }
+      .hero { grid-template-columns: minmax(0, 1fr) 118px; column-gap: 12px; margin-top: 21px; }
+      .hero-kicker { font-size: 11px; letter-spacing: .5px; gap: 5px; }
+      h1 { font-size: clamp(30px, 7.6vw, 40px); letter-spacing: -1.3px; margin-top: 8px; }
+      .cursor { margin-left: 1px; }
+      .deadline { padding: 10px 10px 9px; }
+      .deadline-label { font-size: 8px; letter-spacing: .5px; }
+      .deadline-number { font-size: 31px; letter-spacing: -2px; margin: 3px 0; }
+      .deadline-caption { font-size: 9px; letter-spacing: 0; }
+      .institutions { font-size: 19px; line-height: 1.65; margin-top: 19px; letter-spacing: -.3px; }
+      .institutions .institution-left { display: block; }
+      .institutions .times { padding-left: 0; }
+      .hero-rule { margin-top: 21px; }
+      .mentor { grid-template-columns: 1fr; gap: 11px; padding: 19px 0; }
+      .mentor-name { font-size: 28px; }
+      .mentor-roles { border-left: 2px solid #dfe7f3; padding-left: 13px; font-size: 13px; line-height: 1.9; }
+      .section { padding-top: 21px; }
+      .section + .section { margin-top: 19px; }
+      h2 { font-size: 19px; }
+      .section-heading { gap: 9px; }
+      .section-index { font-size: 12px; }
+      .section-file { font-size: 9px; }
+      .research-lead { font-size: 18px; line-height: 1.8; }
+      .research-focus { display: inline; font-size: 14px; line-height: 2.1; }
+      .keyword { padding: 2px 4px; }
+      .research-copy, .applicant-copy, .contact-copy { font-size: 14px; line-height: 1.95; }
+      .eligibility { font-size: 15px; }
+      .admission-note { padding: 11px 12px; gap: 9px; }
+      .admission-note p { font-size: 14px; line-height: 1.9; }
+      .admission-prompt { font-size: 15px; }
+      .workflow { padding: 10px; font-size: 9px; }
+      .workflow .prompt { margin-right: 8px; font-size: 12px; }
+      .workflow .flow-return { margin-left: 7px; font-size: 14px; }
+      .contact-terminal { padding: 13px 12px; margin-top: 14px; }
+      .contact-line { grid-template-columns: 12px minmax(0,1fr) auto; gap: 4px; row-gap: 2px; }
+      .contact-line + .contact-line { margin-top: 12px; }
+      .contact-label { grid-column: 2; font-size: 11px; }
+      .contact-link { grid-column: 2 / 4; font-size: clamp(12px, 3.35vw, 15px); padding-bottom: 1px; }
+      .copy-button { grid-column: 3; grid-row: 1; padding: 3px 7px; font-size: 10px; }
+      .closing { font-size: 11px; gap: 7px; }
+      .closing-tag { display: none; }
+      .status-bar { padding: 9px 15px; gap: 8px; font-size: 8px; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 0; }
+      html, body { width: 210mm; margin: 0 !important; padding: 0 !important; background: white; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .toast, .copy-button { display: none !important; }
+      .terminal { width: 960px !important; max-width: none; border-radius: 0; border: 0; box-shadow: none; zoom: .826; margin: 0; break-inside: avoid; }
+      .paper { padding: 32px 44px 29px; }
+      .hero { grid-template-columns: minmax(0,1fr) 220px; gap: 30px; }
+      .hero-kicker { font-size: 14px; }
+      h1 { font-size: 74px; }
+      .deadline { padding: 16px 18px 12px; }
+      .deadline-number { font-size: 53px; }
+      .deadline-caption { font-size: 13px; }
+      .institutions { font-size: 25px; }
+      .institutions .institution-left { display: inline; }
+      .mentor { grid-template-columns: 185px minmax(0,1fr); gap: 25px; }
+      .mentor-name { font-size: 32px; }
+      .mentor-roles { font-size: 16px; padding-left: 24px; }
+      a { text-decoration: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="terminal" id="poster" aria-label="博士招生海报">
+    <div class="window-bar" aria-hidden="true">
+      <span class="window-controls"><i></i><i></i><i></i></span>
+      <span class="window-path">~/science/phd/ <b>recruitment.md</b></span>
+      <span class="window-theme">[ LIGHT MODE ]</span>
+    </div>
+
+    <div class="paper">
+      <div class="shell-line" aria-hidden="true">
+        <span class="shell-user">research@science</span><span>~</span><span>$</span><span class="shell-command">cat recruitment.md</span>
+      </div>
+
+      <header>
+        <div class="hero">
+          <div>
+            <div class="hero-kicker"><span class="bracket">[</span><span>Last Call</span><span class="bracket">]</span><span class="kicker-note">PhD RECRUITMENT</span></div>
+            <h1><span>博士招生</span><span class="cursor" aria-hidden="true">_</span></h1>
+          </div>
+          <aside class="deadline" aria-label="申请截止：9 月 9 日">
+            <div class="deadline-label">// DEADLINE</div>
+            <div class="deadline-number">09.09</div>
+            <div class="deadline-caption">申请截止：9 月 9 日</div>
+          </aside>
+        </div>
+        <p class="institutions"><span class="institution-left">北京中关村学院</span><span class="times"> × </span>中国科学技术大学联培</p>
+        <div class="hero-rule"></div>
+      </header>
+
+      <section class="mentor" aria-label="导师信息">
+        <div>
+          <div class="section-eyebrow">01 / MENTOR</div>
+          <h2 class="mentor-name"><span>夏应策</span><span class="mentor-label">导师</span></h2>
+        </div>
+        <div class="mentor-roles">
+          <p>北京中关村学院副教授</p>
+          <p>中国科学技术大学兼职博士生导师</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="researchTitle">
+        <div class="section-heading"><span class="section-index" aria-hidden="true">[02]</span><h2 id="researchTitle">研究方向</h2><span class="section-file" aria-hidden="true">// research.md</span></div>
+        <p class="research-lead"><strong>大模型与智能体技术及其在科学发现中的应用</strong>，<br><span class="research-focus">重点包括<span class="keyword">大模型后训练</span>、<span class="keyword">智能体系统</span>与<span class="keyword">自我进化</span>。</span></p>
+        <p class="research-copy">我们希望不止于调用现成模型，而是将模型训练、智能体与实验反馈连接起来，<strong>让 AI 在解决科学问题的过程中持续变强。</strong></p>
+        <div class="workflow" aria-label="模型训练、智能体、实验反馈与自我进化">
+          <span class="prompt" aria-hidden="true">&gt;</span><span>模型训练</span><span class="flow-arrow" aria-hidden="true">→</span><span>智能体</span><span class="flow-arrow" aria-hidden="true">→</span><span>实验反馈</span><span class="flow-arrow" aria-hidden="true">→</span><span>自我进化</span><span class="flow-return" aria-hidden="true">↺</span>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="applicantTitle">
+        <div class="section-heading"><span class="section-index" aria-hidden="true">[03]</span><h2 id="applicantTitle">招生对象</h2><span class="section-file" aria-hidden="true">// eligibility.yaml</span></div>
+        <p class="eligibility">面向<strong>已获得北京中关村学院优营 offer</strong>、<strong>2027 年本科毕业</strong>且<strong>已取得推免资格</strong>的同学。</p>
+        <div class="admission-note" role="note" aria-label="推免与联合培养">
+          <span class="admission-prompt" aria-hidden="true">&gt;</span>
+          <p>通过本次选拔的同学，<strong>可直接推免至中国科学技术大学</strong>，进入双方联合培养博士项目。</p>
+        </div>
+        <p class="applicant-copy">欢迎具有<strong>人工智能、计算机等相关背景</strong>、对科学发现感兴趣的同学。我们看重扎实的技术能力、对科学问题的好奇心，以及把研究做实的执行力。</p>
+      </section>
+
+      <section class="section" aria-labelledby="contactTitle">
+        <div class="section-heading"><span class="section-index" aria-hidden="true">[04]</span><h2 id="contactTitle">联系方式</h2><span class="section-file" aria-hidden="true">// contact.sh</span></div>
+        <p class="contact-copy">欢迎感兴趣的同学发送<strong>个人简历与研究兴趣</strong>，与我交流；<br>也感谢各位老师、朋友帮忙推荐！</p>
+        <div class="contact-terminal">
+          <div class="contact-line">
+            <span class="contact-prompt" aria-hidden="true">&gt;</span>
+            <span class="contact-label">联系邮箱</span>
+            <a class="contact-link" id="emailAddress" href="mailto:yingce.xia@outlook.com">yingce.xia@outlook.com</a>
+            <button class="copy-button" id="copyButton" type="button" title="复制联系邮箱" aria-label="复制联系邮箱">复制</button>
+          </div>
+          <div class="contact-line">
+            <span class="contact-prompt" aria-hidden="true">&gt;</span>
+            <span class="contact-label">个人主页</span>
+            <a class="contact-link" id="homepage" href="https://xyc1207.github.io/" target="_blank" rel="noopener noreferrer">https://xyc1207.github.io/</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="closing"><span class="closing-symbol" aria-hidden="true">&gt;_</span><span>向真实的科学问题进发</span><span class="closing-rule" aria-hidden="true"></span><span class="closing-tag">AI for Science</span></div>
+    </div>
+
+    <footer class="status-bar" aria-hidden="true"><span class="status-branch">⑂ science / discovery</span><span class="status-right">recruitment.md</span><span>UTF-8</span><span>LIGHT</span></footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      'use strict';
+      const toast = document.getElementById('toast');
+      let toastTimer;
+
+      function notify(message) {
+        window.clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add('visible');
+        toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 2600);
+      }
+
+      document.getElementById('copyButton').addEventListener('click', async () => {
+        const text = document.getElementById('emailAddress').textContent.trim();
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            try { await navigator.clipboard.writeText(text); notify('邮箱已复制'); return; } catch (_) { /* 回退到本地复制方式 */ }
+          }
+          const field = document.createElement('textarea');
+          field.value = text;
+          field.setAttribute('readonly', '');
+          field.style.position = 'fixed';
+          field.style.opacity = '0';
+          document.body.appendChild(field);
+          field.select();
+          const ok = document.execCommand('copy');
+          field.remove();
+          if (!ok) throw new Error('Clipboard unavailable');
+          notify('邮箱已复制');
+        } catch (_) {
+          notify('自动复制不可用，请选中邮箱文字手动复制');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
