@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>科学智能系统｜三项研究任务与共享基础设施</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --ink:#142033;
+    --muted:#5f6b7c;
+    --line:#dfe5ef;
+    --card:#ffffff;
+    --blue:#315efb;
+    --violet:#6c4cff;
+    --cyan:#00a6c7;
+    --green:#16a085;
+    --orange:#f29d38;
+    --soft-blue:#edf2ff;
+    --soft-violet:#f2efff;
+    --soft-cyan:#eaf9fb;
+    --soft-green:#eaf8f4;
+    --soft-orange:#fff5e8;
+    --shadow:0 10px 30px rgba(34,55,90,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+  body{min-height:100vh}
+  .page{
+    min-height:100vh;
+    padding:34px 42px 28px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-width:1600px;
+    margin:0 auto;
+  }
+  .header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+  .title-wrap{display:flex;flex-direction:column;gap:5px}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+  .slogan{font-size:23px;line-height:1.2;font-weight:850;letter-spacing:-.02em;color:#1d3f91;margin-top:2px}
+  .slogan-sub{font-size:13.5px;line-height:1.45;color:var(--muted);font-style:italic;margin-top:1px;margin-bottom:4px}
+  h1{font-size:34px;line-height:1.15;margin:0;font-weight:800;letter-spacing:-.02em}
+  .subtitle{font-size:16px;color:var(--muted);margin-top:4px}
+  .principle{
+    font-size:13px;color:#41506a;background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:9px 14px;box-shadow:var(--shadow);white-space:nowrap
+  }
+
+  .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .project{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+    padding:20px 20px 18px;min-height:330px;display:flex;flex-direction:column;position:relative;overflow:hidden
+  }
+  .project::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--accent)}
+  .p1{--accent:var(--blue);--soft:var(--soft-blue)}
+  .p2{--accent:var(--violet);--soft:var(--soft-violet)}
+  .p3{--accent:var(--cyan);--soft:var(--soft-cyan)}
+  .phead{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
+  .num{font-size:12px;font-weight:800;color:#fff;background:var(--accent);border-radius:8px;padding:5px 8px;line-height:1}
+  .ptitle{font-size:20px;font-weight:800;line-height:1.3;margin-top:-2px}
+  .mission{font-size:15px;line-height:1.5;font-weight:850;color:var(--accent);margin:0 0 10px;padding-left:11px;border-left:3px solid var(--accent)}
+  .question{background:var(--soft);border-radius:12px;padding:10px 12px;font-size:13.5px;line-height:1.5;font-weight:650;margin-bottom:14px}
+  .section-title{font-size:12px;letter-spacing:.08em;color:var(--muted);font-weight:800;text-transform:uppercase;margin:0 0 8px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+  .chip{font-size:13px;font-weight:700;padding:7px 9px;border-radius:9px;background:#f3f5f9;border:1px solid #e6ebf2;color:#2a3548}
+  .chip.key{background:var(--soft);border-color:transparent;color:var(--accent)}
+  .science{margin-top:auto;border-top:1px dashed var(--line);padding-top:13px}
+  .science-grid{display:flex;flex-wrap:wrap;gap:7px}
+  .science-chip{font-size:12.5px;padding:6px 8px;border-radius:8px;background:#fff;border:1px solid var(--line);color:#4b596d}
+
+  .flow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+  .arrowline{height:1px;background:linear-gradient(90deg,transparent,#b7c1d1,transparent)}
+  .flowlabel{font-size:12px;color:#7a8799;font-weight:700;letter-spacing:.06em}
+
+  .posttrain{
+    display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:center;
+    background:linear-gradient(110deg,#101c34,#1f2f55);color:#fff;border-radius:18px;padding:17px 20px;box-shadow:var(--shadow)
+  }
+  .post-title{font-size:18px;font-weight:800;line-height:1.25}
+  .post-sub{font-size:12px;color:#bac6db;margin-top:5px}
+  .post-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .post-chip{font-size:12.5px;font-weight:700;border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}
+  .post-chip.strong{background:#fff;color:#1b2740;border-color:#fff}
+
+  .base-title{display:flex;align-items:center;gap:10px;margin-top:-1px}
+  .base-title span:first-child{font-weight:800;font-size:13px;letter-spacing:.08em;color:#53627a}
+  .base-title span:last-child{font-size:12px;color:#8b97a8}
+  .base{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .base-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}
+  .base-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .base-name{font-size:17px;font-weight:800}
+  .tag{font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 8px;border-radius:999px}
+  .data .tag{background:var(--soft-green);color:var(--green)}
+  .sciencebase .tag{background:var(--soft-orange);color:#c87817}
+  .base-list{display:flex;flex-wrap:wrap;gap:7px}
+  .base-item{font-size:12.5px;background:#f7f9fc;border:1px solid #e9edf3;border-radius:8px;padding:6px 8px;color:#4a586c}
+  .footer{display:flex;justify-content:space-between;gap:20px;align-items:center;color:#7c8899;font-size:11.5px;margin-top:auto}
+  .footer strong{color:#53627a}
+
+  @media (max-width:1000px){
+    .projects{grid-template-columns:1fr}.project{min-height:auto}
+    .posttrain{grid-template-columns:1fr}.base{grid-template-columns:1fr}.principle{display:none}
+  }
+  @media print{
+    body{background:#fff}.page{padding:22px;max-width:none}.project,.posttrain,.base-card{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="title-wrap">
+      <div class="eyebrow">Agentic Science · Research Portfolio</div>
+      <div class="slogan">AI4AI &amp; RSI through Science</div>
+      <div class="slogan-sub">Science as a training and verification environment for self-improving AI.</div>
+      <h1>科学智能系统：三项研究任务与共享基础设施</h1>
+      <div class="subtitle">三个递进问题：表示与操作世界 → 预测与决策 → 进入物理世界</div>
+    </div>
+    <div class="principle">纵向项目聚焦能力｜横向共享学习｜底层由 Data × Science 支撑</div>
+  </div>
+
+  <section class="projects">
+    <article class="project p1">
+      <div class="phead">
+        <div class="num">01</div>
+        <div class="ptitle">多模态智能体基础模型与能力学习</div>
+      </div>
+      <div class="mission">扩展 Agent 能够表示和操作的世界。</div>
+      <div class="question">让基础模型直接理解、生成、修改复杂专业对象，并可持续扩展新的专业能力。</div>
+      <div class="section-title">AI 核心技术</div>
+      <div class="chips">
+        <span class="chip key">多模态原生建模</span>
+        <span class="chip key">条件生成与对象编辑</span>
+        <span class="chip key">持续能力扩展</span>
+      </div>
+      <div class="science">
+        <div class="section-title">Science 提供</div>
+        <div class="science-grid">
+          <span class="science-chip">科学对象与专业表征</span>
+          <span class="science-chip">真实条件与多约束</span>
+          <span class="science-chip">专业模型 / 模拟器</span>
+          <span class="science-chip">独立计算与实验验证</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project p2">
+      <div class="phead">
+        <div class="num">02</div>
+        <div class="ptitle">世界模型驱动的长程智能体决策</div>
+      </div>
+      <div class="mission">让 Agent 学会预测这个世界并做决策。</div>
+      <div class="question">让智能体在真正执行前预演行动后果、比较多条路径，并根据反馈持续修正决策。</div>
+      <div class="section-title">AI 核心技术</div>
+      <div class="chips">
+        <span class="chip key">世界模型</span>
+        <span class="chip key">环境构建</span>
+        <span class="chip key">长程规划与决策</span>
+      </div>
+      <div class="science">
+        <div class="section-title">Science 提供</div>
+        <div class="science-grid">
+          <span class="science-chip">假设 — 干预 — 观测</span>
+          <span class="science-chip">证据与认知更新</span>
+          <span class="science-chip">真实 / 高保真 Dynamics</span>
+          <span class="science-chip">长周期与高成本反馈</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="project p3">
+      <div class="phead">
+        <div class="num">03</div>
+        <div class="ptitle">物理反馈驱动的自主实验智能体（筹）</div>
+      </div>
+      <div class="mission">让 Agent 真正进入物理世界。</div>
+      <div class="question">以 VLA 为重要技术路线，让智能体感知实验环境、操作仪器与机器人，并在真实物理反馈中形成自主闭环。</div>
+      <div class="section-title">AI 核心技术</div>
+      <div class="chips">
+        <span class="chip key">VLA</span>
+        <span class="chip key">多模态实验感知</span>
+        <span class="chip key">仪器与机器人操作</span>
+        <span class="chip key">长时程实验执行</span>
+        <span class="chip key">异常检测与失败恢复</span>
+      </div>
+      <div class="science">
+        <div class="section-title">Science 提供</div>
+        <div class="science-grid">
+          <span class="science-chip">实验问题与 Protocol</span>
+          <span class="science-chip">仪器 / 机器人 / AutoLab</span>
+          <span class="science-chip">物理约束与安全边界</span>
+          <span class="science-chip">Wet-lab Ground Truth</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="flow"><div class="arrowline"></div><div class="flowlabel">执行轨迹与真实反馈 ⇅ 能力更新</div><div class="arrowline"></div></div>
+
+  <section class="posttrain">
+    <div>
+      <div class="post-title">共享学习层 · Agentic Post-training</div>
+      <div class="post-sub">科学智能体方向共建基础设施</div>
+    </div>
+    <div class="post-chips">
+      <span class="post-chip strong">Trajectory SFT</span>
+      <span class="post-chip">Preference Learning</span>
+      <span class="post-chip">Process Reward</span>
+      <span class="post-chip strong">RL</span>
+      <span class="post-chip">Model-based RL</span>
+      <span class="post-chip">Continual Learning</span>
+      <span class="post-chip">Failure Recovery Learning</span>
+      <span class="post-chip">Feedback-driven Improvement</span>
+    </div>
+  </section>
+
+  <div class="base-title"><span>SHARED FOUNDATION</span><span>底层共享基础设施：Data × Science</span></div>
+  <section class="base">
+    <div class="base-card data">
+      <div class="base-head"><div class="base-name">Data</div><div class="tag">DATA & EVALUATION</div></div>
+      <div class="base-list">
+        <span class="base-item">多模态科学数据</span>
+        <span class="base-item">可执行知识 / Workflow / Skill / Tool</span>
+        <span class="base-item">成功 / 失败 / 修正轨迹</span>
+        <span class="base-item">专家反馈</span>
+        <span class="base-item">Benchmark / Verifier</span>
+        <span class="base-item">版本与可复现记录</span>
+      </div>
+    </div>
+    <div class="base-card sciencebase">
+      <div class="base-head"><div class="base-name">Science</div><div class="tag">REAL-WORLD GROUNDING</div></div>
+      <div class="base-list">
+        <span class="base-item">真实科学问题</span>
+        <span class="base-item">专业知识与科学约束</span>
+        <span class="base-item">领域模型 / 模拟器 / 计算工具</span>
+        <span class="base-item">实验平台与真实反馈</span>
+        <span class="base-item">专家判断</span>
+        <span class="base-item">独立验证与 Ground Truth</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div><strong>主线：</strong>Capability → Decision → Physical Interaction</div>
+    <div><strong>闭环：</strong>Data & Science → Agentic Post-training → Projects → New Trajectories / Feedback</div>
+  </div>
+</div>
+</body>
+</html>
